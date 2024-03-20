@@ -18,5 +18,22 @@ const weekday = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturd
 const weeklyActivities = ["study", "exercise", "relax", "free"];
 
 for (let i = 0; i < weekday.length; i++) {
-    
+    switch (true) {
+        case weekday[i] == "monday": 
+            console.log(weeklyActivities[0]);
+            break;
+        case weekday[i] == "tuesday": 
+            console.log(weeklyActivities[1]);
+            break;
+        case weekday[i] == "wednesday": 
+            console.log(weeklyActivities[2]);
+            break;
+        case weekday[i] == "thursday": 
+            console.log(weeklyActivities[0]);
+            break;
+        case weekday[i] == "friday": 
+            console.log(weeklyActivities[1]);
+            break;
+        default: console.log(weeklyActivities[3]);
+    }
 }
