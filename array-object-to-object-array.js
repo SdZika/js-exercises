@@ -1,0 +1,17 @@
+let arrayOfObjects = [{ name: 'John', age: 25 }, { name: 'Amy', age: 20 }, { name: 'Cam', age: 25 }];
+let objectsOfArray = {};
+let newArry = [];
+for (i = 0; i < arrayOfObjects.length; i++) {
+    
+    for (key in arrayOfObjects[i]) {
+        
+        if ( typeof arrayOfObjects[i][key] === "number") {
+            objectsOfArray[arrayOfObjects[i][key]] = [key];
+            console.log(objectsOfArray);
+        } else if ( typeof arrayOfObjects[i][key] !== "number"){
+            
+            newArry.push(arrayOfObjects[i][key]);
+            console.log(newArry);
+        }
+    }
+}
