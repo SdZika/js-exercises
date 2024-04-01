@@ -8,14 +8,15 @@ let numTwo = Math.floor(Math.random() * 10);
 
 switch (true) {
     case numOne <= 3 : 
-        prompt ("What is", numOne, "*", numTwo, "?");
+        prompt(`What is ${numOne} * ${numTwo} ?`);
         brake;
 
     case numOne <= 6 : 
-        prompt("What is", numOne, "+", numTwo, "?");
+        prompt(`What is ${numOne} + ${numTwo} ?`);
         brake;
     
     default:
-        prompt("What is", numOne, "*", numTwo, "?");
+        prompt(`What is ${numOne} - ${numTwo} ?`);
+        
 
 }
