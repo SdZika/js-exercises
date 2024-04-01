@@ -6,18 +6,22 @@ for (i = 0; i < arrayOfObjects.length; i++) {
     for (key in arrayOfObjects[i]) {
         
         if ( typeof arrayOfObjects[i][key] === "number") {
-            objectsOfArray[arrayOfObjects[i][key]] = [key];
-            console.log(objectsOfArray);
+            objectsOfArray[arrayOfObjects[i][key]] = newArry;
+           
         } else if ( typeof arrayOfObjects[i][key] !== "number"){
             
             newArry.push(arrayOfObjects[i][key]);
-            console.log(newArry);
+            
         }
     }
 }
-for (key in objectsOfArray){
+console.log(objectsOfArray);
+console.log(newArry);
+
+
+/*for (key in objectsOfArray){
     for (let i = 0; i < newArry.length; i++) {
         if (newArry[i] === objectsOfArray)
 }
 
-}
+}*/
