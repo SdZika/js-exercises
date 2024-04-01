@@ -15,3 +15,9 @@ for (i = 0; i < arrayOfObjects.length; i++) {
         }
     }
 }
+for (key in objectsOfArray){
+    for (let i = 0; i < newArry.length; i++) {
+        if (newArry[i] === objectsOfArray)
+}
+
+}
