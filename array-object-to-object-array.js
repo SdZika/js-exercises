@@ -6,17 +6,20 @@ for (i = 0; i < arrayOfObjects.length; i++) {
     for (key in arrayOfObjects[i]) {
         
         if ( typeof arrayOfObjects[i][key] === "number") {
-            objectsOfArray[arrayOfObjects[i][key]] = newArry;
-           
+            objectsOfArray[arrayOfObjects[i][key]] = key;
+            
         } else if ( typeof arrayOfObjects[i][key] !== "number"){
             
+
             newArry.push(arrayOfObjects[i][key]);
             
         }
     }
 }
-console.log(objectsOfArray);
+
 console.log(newArry);
+console.log(objectsOfArray);
+
 
 
 /*for (key in objectsOfArray){
