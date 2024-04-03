@@ -1,30 +1,16 @@
 let arrayOfObjects = [{ name: 'John', age: 25 }, { name: 'Amy', age: 20 }, { name: 'Cam', age: 25 }];
 let objectsOfArray = {};
-let newArry = [];
+
 for (i = 0; i < arrayOfObjects.length; i++) {
-    
-    for (key in arrayOfObjects[i]) {
         
-        if ( typeof arrayOfObjects[i][key] === "number") {
-            objectsOfArray[arrayOfObjects[i][key]] = key;
-            
-        } else if ( typeof arrayOfObjects[i][key] !== "number"){
-            
-
-            newArry.push(arrayOfObjects[i][key]);
-            
+        let personAge = arrayOfObjects[i].age;
+        let personName = arrayOfObjects[i].nema;
+        if (objectsOfArray[personAge] === undefined) {
+            objectsOfArray[personAge] = [];
         }
-    }
-}
 
-console.log(newArry);
+    objectsOfArray[personAge].push(personName);
+}
 console.log(objectsOfArray);
 
 
-
-/*for (key in objectsOfArray){
-    for (let i = 0; i < newArry.length; i++) {
-        if (newArry[i] === objectsOfArray)
-}
-
-}*/
