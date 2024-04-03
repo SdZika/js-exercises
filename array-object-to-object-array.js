@@ -8,12 +8,7 @@ let arrayOfObjects = [{ name: 'John', age: 25 }, { name: 'Amy', age: 20 }, { nam
 let objectsOfArray = {};
 
 for (i = 0; i < arrayOfObjects.length; i++) {
-<<<<<<< HEAD
-    
-  
-   
-}
-=======
+
         
         let personAge = arrayOfObjects[i].age;
         let personName = arrayOfObjects[i].nema;
@@ -24,7 +19,7 @@ for (i = 0; i < arrayOfObjects.length; i++) {
     objectsOfArray[personAge].push(personName);
 }
 console.log(objectsOfArray);
->>>>>>> 9e53a37e9b5455ed6c21518b556fe55dc080051f
 
-console.log(objectsOfArray);
+
+
 
