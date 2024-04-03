@@ -6,18 +6,25 @@ output
 
 let arrayOfObjects = [{ name: 'John', age: 25 }, { name: 'Amy', age: 20 }, { name: 'Cam', age: 25 }];
 let objectsOfArray = {};
-let newArry = [];
+
 for (i = 0; i < arrayOfObjects.length; i++) {
+<<<<<<< HEAD
     
   
    
 }
+=======
+        
+        let personAge = arrayOfObjects[i].age;
+        let personName = arrayOfObjects[i].nema;
+        if (objectsOfArray[personAge] === undefined) {
+            objectsOfArray[personAge] = [];
+        }
+
+    objectsOfArray[personAge].push(personName);
+}
+console.log(objectsOfArray);
+>>>>>>> 9e53a37e9b5455ed6c21518b556fe55dc080051f
 
 console.log(objectsOfArray);
 
-/*for (key in objectsOfArray){
-    for (let i = 0; i < newArry.length; i++) {
-        if (newArry[i] === objectsOfArray)
-}
-
-}*/
