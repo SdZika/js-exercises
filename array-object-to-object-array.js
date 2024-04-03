@@ -1,23 +1,19 @@
+/* Given an array of objects where each object has properties name and age, write a JavaScript 
+program to transform this array into an object of arrays categorized by age. If the input array is: 
+[{ name: 'John', age: 25 }, { name: 'Amy', age: 20 }, { name: 'cam', age: 25 }]
+output
+{ '20': ['Amy'], '25': ['John', 'cam'] }*/
+
 let arrayOfObjects = [{ name: 'John', age: 25 }, { name: 'Amy', age: 20 }, { name: 'Cam', age: 25 }];
 let objectsOfArray = {};
 let newArry = [];
 for (i = 0; i < arrayOfObjects.length; i++) {
     
-    for (key in arrayOfObjects[i]) {
-        
-        if ( typeof arrayOfObjects[i][key] === "number") {
-            objectsOfArray[arrayOfObjects[i][key]] = newArry;
-           
-        } else if ( typeof arrayOfObjects[i][key] !== "number"){
-            
-            newArry.push(arrayOfObjects[i][key]);
-            
-        }
-    }
+  
+   
 }
-console.log(objectsOfArray);
-console.log(newArry);
 
+console.log(objectsOfArray);
 
 /*for (key in objectsOfArray){
     for (let i = 0; i < newArry.length; i++) {
