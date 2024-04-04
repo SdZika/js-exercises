@@ -26,4 +26,4 @@ for (let key in grade ) {
     }
 }
 
-console.log(students);
+console.log(students); // print all names and all grades 
