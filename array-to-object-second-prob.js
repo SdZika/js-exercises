@@ -17,7 +17,7 @@ for (let i = 0; i < myArray.length; i++) {
 
     for (key in myArray[i]) {
         if (key === "brand")  {
-            myArray[i].item = myArray[i][key];
+            myArray[i]["item"] = myArray[i][key];
             console.log(myArray);
         }
        
