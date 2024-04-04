@@ -35,4 +35,4 @@ for (let i = 0; i < transactions.length; i++) {
             console.log(transactions[i][key]);
        }
     }
-}
+} //dont know what is next step
