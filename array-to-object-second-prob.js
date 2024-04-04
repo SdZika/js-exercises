@@ -5,23 +5,31 @@ to transform this array into an object of arrays categorized by brand. If the in
 output: [{ item: 'Apple', quantity: 2 }, { item: 'Banana', quantity: 4 }, { item: 'Apple', quantity: 1 }] */
 
 let myArray = [{ brand: 'Apple', model: 'iPhone X' }, { brand: 'Samsung', model: 'Galaxy S10' }, { brand: 'Apple', model: 'iPhone 8' }];
-
+let newArray = [];
+let resultArray = [];
+let quantity = 0;
 
 for (let i = 0; i < myArray.length; i++) {
 
-    //let brandName = myArray[i].brand;
-    //let modelName = myArray[i].model;
-    //console.log(brandName);
-    //console.log(modelName);
-    
+    let brand = myArray[i].brand;
 
-    for (key in myArray[i]) {
-        if (key === "brand")  {
-            myArray[i].item = myArray[i][key];
-            console.log(myArray);
-        }
-       
+    console.log(brand); // output apple samsung apple
+   
+    if (newArray[brand]) {
+        newArray[brand]++
+    } else {
+        newArray[brand] = 1;
     }
+    console.log(newArray[brand]); // output apple 1 samsung 1 apple 2
     
-
 }
+
+for(brand in newArray){
+
+    resultArray.push({
+        item: brand,
+        quantity: newArray[brand]
+    }) // still dont understand why we do object loop insted array loop
+}
+
+console.log(resultArray);
