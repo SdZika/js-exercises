@@ -24,15 +24,24 @@ const transactions = [
     { type: 'expense', amount: 120 }
 ];
 
-const finalBalance = [];
+const finalBalance = {};
 let totalIncome = 0;
 let totalExpense = 0;
 let balance = 0;
 
 for (let i = 0; i < transactions.length; i++) {
-    for (let key in transactions[i]) {
-       if (typeof transactions[i][key] === "number") {
-            console.log(transactions[i][key]);
+    for (key in transactions[i]) {
+       if (transactions[i][key] === "income") {
+        totalIncome += transactions[i].amount;
+        console.log(totalIncome);
+       } else if (transactions[i][key] === "expense") {
+        totalExpense += transactions[i].amount;
+        console.log(totalExpense);
        }
+       finalBalance.balance = totalIncome - totalExpense;
     }
-} //dont know what is next step
+} 
+finalBalance.totalIncome = totalIncome;
+finalBalance.totalExpense = totalExpense;
+
+console.log(finalBalance);
