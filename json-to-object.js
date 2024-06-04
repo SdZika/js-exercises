@@ -1,4 +1,4 @@
-const jsonString = `{
+const jsonString = {
 "data": [
     {
     "ID Nation": "01000US",
@@ -99,9 +99,13 @@ const jsonString = `{
     "substitutions": []
     }
   ]
-}`
+}
+
+console.log(typeof jsonString);
 
 const jsonObject = JSON.parse(jsonString);
+
+console.log(jsonObject);
 
 sourceArray = jsonObject.source;
 
