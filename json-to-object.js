@@ -1,130 +1,53 @@
-const jsonString = {
-"data": [
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2022,
-    "Year": "2022",
-    "Population": 331097593,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2021,
-    "Year": "2021",
-    "Population": 329725481,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2020,
-    "Year": "2020",
-    "Population": 326569308,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2019,
-    "Year": "2019",
-    "Population": 324697795,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2018,
-    "Year": "2018",
-    "Population": 322903030,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2017,
-    "Year": "2017",
-    "Population": 321004407,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2016,
-    "Year": "2016",
-    "Population": 318558162,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2015,
-    "Year": "2015",
-    "Population": 316515021,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2014,
-    "Year": "2014",
-    "Population": 314107084,
-    "Slug Nation": "united-states"
-    },
-    {
-    "ID Nation": "01000US",
-    "Nation": "United States",
-    "ID Year": 2013,
-    "Year": "2013",
-    "Population": 311536594,
-    "Slug Nation": "united-states"
-    }
-],
-"source": [
-    {
-    "measures": [
-        "Population"
-        ],
-    "annotations": {
-        "source_name": "Census Bureau",
-        "source_description": "The American Community Survey (ACS) is conducted by the US Census and sent to a portion of the population every year.",
-        "dataset_name": "ACS 5-year Estimate",
-        "dataset_link": "http://www.census.gov/programs-surveys/acs/",
-        "table_id": "B01003",
-        "topic": "Diversity",
-        "subtopic": "Demographics"
-        },
-    "name": "acs_yg_total_population_5",
-    "substitutions": []
-    }
-  ]
-}
 
-console.log(typeof jsonString);
 
-const jsonObject = JSON.parse(jsonString);
+   //   for(let value of data){
+    //       for (let key in value) {
+    //          if (key === "annotations") {
+    //             if(typeof value[key] === "object")
+    //                  for (let j in value[key]) {
+    //                 console.log(`key: ${j}, value: ${value[key][j]}`);
+    //             }
+    //         } else {
+    //             console.log(`key: ${key}, value: ${value[key]}`)
+    //         }
+    //     }
+    // }
 
-console.log(jsonObject);
-
-sourceArray = jsonObject.source;
-
-for(let value of sourceArray){
-    
-    for (let key in value) {
-        
-        if (key === "annotations") {
-            if(typeof value[key] === "object")
-            
-            for (let j in value[key]) {
-                console.log(`key: ${j}, value: ${value[key][j]}`);
-            }
-        } else {
-            console.log(`key: ${key}, value: ${value[key]}`)
+    async function fetchJSON() {
+      try {
+        const response = await fetch('mydata.json'); // Fetching mydata.json from the same folder
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
         }
+        const data = await response.json(); // Parsing JSON data
+        return data; // Return the parsed JSON data
+      } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+        return null; // Return null if there's an error
+      }
     }
-}
-
-
-
+    
+    // Function to process the JSON data
+    async function processData() {
+      const data = await fetchJSON();
+      if (data) {
+        console.log('Fetched JSON data:', data);
+    
+        // Accessing and logging each record in the 'data' array
+        data.data.forEach(record => {
+          console.log(`Year: ${record.Year}, Population: ${record.Population}`);
+        });
+    
+        // Accessing and logging the source information
+        const source = data.source[0];
+        console.log('Source Name:', source.annotations.source_name);
+        console.log('Source Description:', source.annotations.source_description);
+        console.log('Dataset Name:', source.annotations.dataset_name);
+        console.log('Dataset Link:', source.annotations.dataset_link);
+      }
+    }
+    
+    // Call the function to fetch and process the JSON data
+    processData();
+    
 
